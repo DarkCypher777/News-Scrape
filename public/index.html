@@ -18,15 +18,24 @@
             padding-top: 5%;
         }
 
+        h1, h2, #button {
+            text-align: center;
+        }
+
+
         #articles {
-            display: inline-block;
-            overflow: auto;
+            display: list-item;
+            overflow-x: auto;
+            text-align: center;
+            background-color: grey;
             width: 60%;
+            margin-left: auto;
             height: 700px;
+            margin-right: auto;
         }
 
         #notes {
-            float: right;
+            display: block;
             width: 30%;
         }
 
@@ -52,15 +61,22 @@
 <body>
     <div id="wrapper">
         <h1>Note Scraper</h1>
+        <div id="button">
+            <button>
+                <a href="/scrape" id="btn-scrape">1. Scrape</a>
+            </button>
+            <button>
+                <a href="/articles" id="btn-articles">2. Articles</a>
+            </button>
+        </div>
+
         <h2><i>Here's whats going on in r/Games</i></h2>
-        <a href="/scrape" id="btn-scrape">1. Scrape</a>
-        <a href="/articles" id="btn-articles">2. Articles</a>
 
         <div id="articles"></div>
 
         <div id="notes"></div>
     </div>
-
+    <footer></footer>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js"></script>
 </body>
