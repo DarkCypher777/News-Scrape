@@ -40,12 +40,10 @@ mongoose.connect(MONGODB_URI);
 // A GET route for scraping the echoJS website
 app.get("/scrape", function (req, res) {
   // First, we grab the body of the html with axios
-  // TODO Link here
   axios.get("https://old.reddit.com/r/Games/").then(function (response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
 
-    // TODO check tag
     // Now, we grab every h2 within an article tag, and do the following:
     $("p.title").each(function (i, element) {
       // Save an empty result object
@@ -77,7 +75,6 @@ app.get("/scrape", function (req, res) {
 });
 
 
-// TODO
 
 // Route for getting all Articles from the db
 app.get("/articles", function (req, res) {
